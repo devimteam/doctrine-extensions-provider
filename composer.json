@@ -1,0 +1,28 @@
+{
+    "type": "library",
+    "name": "devimteam/doctrine-extensions-provider",
+    "description": "Pocket of doctrine extensions",
+    "keywords": [],
+    "license": "",
+    "authors": [],
+    "version": "1.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Devimteam\\Provider\\DoctrineExtensionsServiceProvider\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/event-dispatcher": "^3.1",
+        "silex/silex": "^2.0",
+        "doctrine/dbal": "^2.5",
+        "symfony/console": "^3.1",
+        "doctrine/orm": "^2.5",
+        "vlobchuk/isolate-console-provider": "dev-master",
+        "gedmo/doctrine-extensions": "^2.4"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.2"
+    }
+}

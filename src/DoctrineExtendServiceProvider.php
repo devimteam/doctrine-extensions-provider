@@ -1,9 +1,9 @@
 <?php
 
-namespace Devimteam\Provider\DoctrineExtensionsServiceProvider;
+namespace Devim\Provider\DoctrineExtensionsServiceProvider;
 
-use Devimteam\Provider\DoctrineExtensionsServiceProvider\EventSubscriber\ConsoleEventSubscriber;
-use Devimteam\Provider\DoctrineExtensionsServiceProvider\Type\JsonbArrayType;
+use Devim\Provider\DoctrineExtensionsServiceProvider\EventSubscriber\ConsoleEventSubscriber;
+use Devim\Provider\DoctrineExtensionsServiceProvider\Type\JsonbArrayType;
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;

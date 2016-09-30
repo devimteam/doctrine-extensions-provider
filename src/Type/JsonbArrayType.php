@@ -1,6 +1,6 @@
 <?php
 
-namespace Devimteam\Provider\DoctrineExtensionsServiceProvider\Type;
+namespace Devim\Provider\DoctrineExtensionsServiceProvider\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\JsonArrayType;

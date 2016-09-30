@@ -1,9 +1,9 @@
 <?php
 
-namespace Devimteam\Provider\DoctrineExtensionsServiceProvider\EventSubscriber;
+namespace Devim\Provider\DoctrineExtensionsServiceProvider\EventSubscriber;
 
-use Devimteam\Provider\DoctrineExtensionsServiceProvider\Command\CreateDatabaseDoctrineCommand;
-use Devimteam\Provider\DoctrineExtensionsServiceProvider\Command\DropDatabaseDoctrineCommand;
+use Devim\Provider\DoctrineExtensionsServiceProvider\Command\CreateDatabaseDoctrineCommand;
+use Devim\Provider\DoctrineExtensionsServiceProvider\Command\DropDatabaseDoctrineCommand;
 use Isolate\ConsoleServiceProvider\Console\ConsoleEvent;
 use Isolate\ConsoleServiceProvider\Console\ConsoleEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Devimteam\Provider\DoctrineExtensionsServiceProvider\Command;
+namespace Devim\Provider\DoctrineExtensionsServiceProvider\Command;
 
 use Doctrine\ORM\EntityManager;
 use Isolate\ConsoleServiceProvider\Console\Command\Command;

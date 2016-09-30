@@ -9,7 +9,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Devimteam\\Provider\\DoctrineExtensionsServiceProvider\\": "src/"
+            "Devim\\Provider\\DoctrineExtensionsServiceProvider\\": "src/"
         }
     },
     "require": {

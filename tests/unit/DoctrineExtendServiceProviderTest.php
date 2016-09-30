@@ -1,6 +1,6 @@
 <?php
 
-use Devimteam\Provider\DoctrineExtensionsServiceProvider\DoctrineExtendServiceProvider;
+use Devim\Provider\DoctrineExtensionsServiceProvider\DoctrineExtendServiceProvider;
 use Pimple\Container;
 
 class DoctrineExtendServiceProviderTest extends \PHPUnit_Framework_TestCase

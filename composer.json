@@ -1,6 +1,9 @@
 {
     "type": "library",
-    "name": "devimteam/doctrine-extensions-provider",
+    "name": "devimteam/silex-doctrine-extend-provider",
+    "replace": {
+        "devimteam/doctrine-extensions-provider": "dev-master"
+    },
     "description": "Pocket of doctrine extensions",
     "keywords": [],
     "license": "",

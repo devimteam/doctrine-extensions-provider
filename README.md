@@ -1,4 +1,4 @@
-# Doctrine Extensions Service Provider
+# Doctrine Extend Service Provider
 
 ## Intro
 

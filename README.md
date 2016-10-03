@@ -9,7 +9,7 @@ Adds doctrine extensions service provider for your app
 #### Install via composer
 
 ```
-$ composer require devimteam/silex-doctrine-extensions-provider
+$ composer require devimteam/silex-doctrine-extend-provider
 ```
 
 ## Use-cases

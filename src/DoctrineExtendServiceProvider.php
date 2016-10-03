@@ -1,9 +1,8 @@
 <?php
 
-namespace Devim\Provider\DoctrineExtensionsServiceProvider;
+namespace Devim\Provider\DoctrineExtendServiceProvider;
 
-use Devim\Provider\DoctrineExtensionsServiceProvider\EventSubscriber\ConsoleEventSubscriber;
-use Devim\Provider\DoctrineExtensionsServiceProvider\Type\JsonbArrayType;
+use Devim\Provider\DoctrineExtendServiceProvider\EventSubscriber\ConsoleEventSubscriber;
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;
@@ -17,7 +16,7 @@ use Silex\Application;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Class DoctrineExtensionsServiceProvider.
+ * Class DoctrineExtendServiceProvider.
  */
 class DoctrineExtendServiceProvider implements ServiceProviderInterface, BootableProviderInterface, EventListenerProviderInterface
 {
@@ -42,7 +41,6 @@ class DoctrineExtendServiceProvider implements ServiceProviderInterface, Bootabl
         $container['orm.extend.subscribers'] = [];
         $container['orm.extend.listeners'] = [];
         $container['orm.extend.filters'] = [];
-        $container['orm.extend.mapping_types'] = [];
     }
 
     /**
@@ -79,16 +77,6 @@ class DoctrineExtendServiceProvider implements ServiceProviderInterface, Bootabl
         foreach ($app['orm.extend.filters'] as $filterName => $filterData) {
             $ormConfig->addFilter($filterData['filter'], $filterData['class']);
             $entityManager->getFilters()->enable($filterData['filter']);
-        }
-
-        if (Type::hasType('jsonb')) {
-            Type::overrideType('jsonb', JsonbArrayType::class);
-        } else {
-            Type::addType('jsonb', JsonbArrayType::class);
-        }
-
-        foreach ($app['orm.extend.mapping_types'] as $type => $mappingType) {
-            $entityManager->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping($type, $mappingType);
         }
     }
 

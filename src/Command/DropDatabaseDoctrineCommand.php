@@ -1,6 +1,6 @@
 <?php
 
-namespace Devim\Provider\DoctrineExtensionsServiceProvider\Command;
+namespace Devim\Provider\DoctrineExtendServiceProvider\Command;
 
 use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Console\Input\InputInterface;

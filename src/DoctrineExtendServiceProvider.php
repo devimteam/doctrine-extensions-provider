@@ -3,6 +3,7 @@
 namespace Devim\Provider\DoctrineExtendServiceProvider;
 
 use Devim\Provider\DoctrineExtendServiceProvider\EventSubscriber\ConsoleEventSubscriber;
+use Devim\Provider\DoctrineExtendServiceProvider\Type\JsonbArrayType;
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;
@@ -41,6 +42,7 @@ class DoctrineExtendServiceProvider implements ServiceProviderInterface, Bootabl
         $container['orm.extend.subscribers'] = [];
         $container['orm.extend.listeners'] = [];
         $container['orm.extend.filters'] = [];
+        $container['orm.extend.mapping_types'] = [];
     }
 
     /**
@@ -77,6 +79,16 @@ class DoctrineExtendServiceProvider implements ServiceProviderInterface, Bootabl
         foreach ($app['orm.extend.filters'] as $filterName => $filterData) {
             $ormConfig->addFilter($filterData['filter'], $filterData['class']);
             $entityManager->getFilters()->enable($filterData['filter']);
+        }
+
+        if (Type::hasType('jsonb')) {
+            Type::overrideType('jsonb', JsonbArrayType::class);
+        } else {
+            Type::addType('jsonb', JsonbArrayType::class);
+        }
+
+        foreach ($app['orm.extend.mapping_types'] as $type => $mappingType) {
+            $entityManager->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping($type, $mappingType);
         }
     }
 
